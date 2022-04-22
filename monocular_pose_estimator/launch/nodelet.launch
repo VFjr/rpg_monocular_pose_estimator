@@ -8,17 +8,17 @@
 
 	<group ns="monocular_pose_estimator" >
     <node pkg="nodelet" type="nodelet" name="mpe_nodelet_manager"  args="manager" output="screen">
-			<param name= "threshold_value" value = "140" />
-			<param name= "gaussian_sigma" value = "0.6" />
-			<param name= "min_blob_area" value = "10" />
-			<param name= "max_blob_area" value = "200" />
-			<param name= "max_width_height_distortion" value = "0.5" />
-			<param name= "max_circular_distortion" value = "0.5" />
-			<param name= "back_projection_pixel_tolerance" value = "5" />
-			<param name= "nearest_neighbour_pixel_tolerance" value = "7" />
-			<param name= "certainty_threshold" value = "0.75" />
-			<param name= "valid_correspondence_threshold" value = "0.7" />
-			<param name= "roi_border_thickness" value="20" />
+			<param name= "threshold_value" value = "40" />
+			<param name= "gaussian_sigma" value = "0.01" />
+			<param name= "min_blob_area" value = "5" />
+			<param name= "max_blob_area" value = "10000" />
+			<param name= "max_width_height_distortion" value = "1" />
+			<param name= "max_circular_distortion" value = "1" />
+			<param name= "back_projection_pixel_tolerance" value = "50" />
+			<param name= "nearest_neighbour_pixel_tolerance" value = "50" />
+			<param name= "certainty_threshold" value = "0.7" />
+			<param name= "valid_correspondence_threshold" value = "0.3" />
+			<param name= "roi_border_thickness" value="100" />
 		</node>
 
     <node pkg="nodelet" type="nodelet" name="monocular_pose_estimator_nodelet" args="load monocular_pose_estimator/MPENodelet mpe_nodelet_manager" output="screen">
